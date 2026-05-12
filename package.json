@@ -13,7 +13,10 @@
 	"scripts": {
 		"build": "wasm-pack build --release",
 		"build:dev": "wasm-pack build --dev",
-		"fmt": "cargo fmt"
+		"fmt": "cargo fmt && biome format . --write",
+		"changeset": "changeset",
+		"version": "changeset version",
+		"release": "pnpm run build && changeset publish"
 	},
 	"files": [
 		"pkg/*.wasm",
@@ -25,5 +28,15 @@
 	"sideEffects": [
 		"./pkg/fft.js",
 		"./pkg/snippets/*"
-	]
+	],
+	"publishConfig": {
+		"provenance": true,
+		"access": "public"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.15",
+		"@changesets/changelog-github": "^0.7.0",
+		"@changesets/cli": "^2.31.0"
+	},
+	"packageManager": "pnpm@11.1.0"
 }
