@@ -14,7 +14,7 @@
 		"build": "wasm-pack build --release",
 		"build:dev": "wasm-pack build --dev",
 		"fmt": "cargo fmt && biome format . --write",
-		"changeset": "changeset",
+		"cs": "changeset",
 		"version": "changeset version",
 		"release": "pnpm run build && changeset publish"
 	},
