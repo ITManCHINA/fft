@@ -11,7 +11,7 @@
 		"url": "https://github.com/amll-dev/fft"
 	},
 	"scripts": {
-		"build": "wasm-pack build --release",
+		"build": "wasm-pack build --release && node -e \"require('fs').rmSync('pkg/.gitignore', { force: true })\"",
 		"build:dev": "wasm-pack build --dev",
 		"fmt": "cargo fmt && biome format . --write",
 		"cs": "changeset",
